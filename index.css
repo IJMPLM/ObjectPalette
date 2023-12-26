@@ -1,0 +1,80 @@
+body {
+    margin:0;
+}
+
+.prompt {
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: +1;
+}
+
+.colors {
+    display:flex;
+    width:100%;
+    height:100vh;
+    flex-direction: row;
+
+    z-index: -1;
+}
+
+.colors div {
+    flex: 1 1 0px;
+    width: 0;
+    border: 1px solid black;
+
+    position: relative;
+    overflow: hidden;
+}
+
+#c1 {
+    background-color:red;
+}
+#c2 {
+    background-color:orange;
+}
+#c3 {
+    background-color:yellow;
+}
+#c4 {
+    background-color:green;
+}
+#c5 {
+    background-color:blue;
+}
+#c6 {
+    background-color:indigo;
+}
+#c7 {
+    background-color:violet;
+}
+
+.colors div:hover {
+    box-shadow: inset 0 0 20px black;
+    cursor:pointer;
+}
+
+.colors div span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.colors div:hover span {
+    opacity: 1;
+}
+
+
+
+@media (max-width: 800px) {
+    .colors {
+        flex-wrap:wrap;
+    }
+    .colors div {
+        flex: 0 0 100%;
+    }
+}
